@@ -4,7 +4,7 @@
   <div>
     <h3><%= category.name %></h3>
     <img src="<%= category.icon %>">
-    <%# <p>Total Amount: <%= category.total_amount </p> %>
+    <p>Total Amount: <%= category.total_amount %> </p>
     <%= link_to "View Transactions", category_transactions_path(category) %>
   </div>
 <% end %>

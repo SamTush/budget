@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_14_202149) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_14_204610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,9 +23,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_202149) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
+  create_table "category_transactions", force: :cascade do |t|
+    t.bigint "transaction_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_transactions_on_category_id"
+    t.index ["transaction_id"], name: "index_category_transactions_on_transaction_id"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.string "name"
+    t.decimal "amount"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,4 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_14_202149) do
   end
 
   add_foreign_key "categories", "users"
+  add_foreign_key "category_transactions", "categories"
+  add_foreign_key "category_transactions", "transactions"
 end

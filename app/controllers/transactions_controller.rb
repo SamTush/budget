@@ -1,15 +1,15 @@
 class TransactionsController < ApplicationController
-    def index
-      @category = Category.find(params[:category_id])
-      @transactions = @category.transactions.order(created_at: :desc)
-      @total_amount = @transactions.sum(:amount)
-    end
+  def index
+    @category = Category.find(params[:category_id])
+    @transactions = @category.transactions.order(created_at: :desc)
+    @total_amount = @transactions.sum(:amount)
+  end
 
 
-    def new
-        @category = Category.find(params[:category_id])
-        @transaction = @category.transactions.build
-      end
+  def new
+    @category = Category.find(params[:category_id])
+    @transaction = @category.transactions.build
+  end
     
       def create
         @category = Category.find(params[:category_id])
