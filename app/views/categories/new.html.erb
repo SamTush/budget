@@ -1,0 +1,13 @@
+<h1>Add a new category</h1>
+
+<%= form_with(model: @category, url: categories_path) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :icon %>
+  <%= form.text_field :icon %>
+
+  <%= form.submit "Save", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Back", root_path, class: "btn btn-secondary" %>
