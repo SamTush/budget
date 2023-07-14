@@ -7,6 +7,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#3778c2',
+              mygreen: '#5fb523',
+              myblack: '#434b54',
+            }
+          }
+        }
+      }
+    </script>
     <%= javascript_importmap_tags %>
   </head>
 
