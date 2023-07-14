@@ -29,7 +29,7 @@
     <p class="alert"><%= alert %></p>
 
     <% if user_signed_in? %>
-      <%= button_to "log out", destroy_user_session_path, method: :delete %>
+      <%= button_to "log out", destroy_user_session_path, method: :delete, class: "w-full text-white pe-2 font-bold flex justify-end bg-main" %>
     <% end %>
 
     <%= yield %>
