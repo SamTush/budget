@@ -1,13 +1,23 @@
-<h1>Add a new category</h1>
+<section class="min-h-screen bg-gray-200 flex flex-col items-center w-full">
+  <div class="bg-main w-full text-white pt-2">
+    <%= link_to root_path, class: "text-white ps-3" do %>
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    <% end %>
+    <div class="h-10 bg-main w-full text-white flex justify-center items-end pb-2">
+      <h1 class="font-bold">Add a new category</h1>
+    </div>
+  </div>
+  <div class="mt-4 w-full px-3 flex flex-col justify-center">
+    <%= form_with(model: @category, url: categories_path) do |form| %>
+      <div class="flex flex-col gap-2">
+        <%= form.text_field :name, autofocus: true, placeholder: "name", class: "px-2 py-2 w-full" %>
+  
+        <%= form.text_field :icon, autofocus: true, placeholder: "icon", class: "px-2 py-2" %>
+        <div class="bg-main h-fit rounded-sm text-center py-3 px-4 text-white mt-4">
+          <%= form.submit "Save", class: "w-full" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
 
-<%= form_with(model: @category, url: categories_path) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-
-  <%= form.label :icon %>
-  <%= form.text_field :icon %>
-
-  <%= form.submit "Save", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to "Back", root_path, class: "btn btn-secondary" %>
