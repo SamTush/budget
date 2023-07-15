@@ -74,9 +74,9 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Demo Video <a name="demo-videoo"></a>
+## 🎥 Demo Video <a name="demo-videoo"></a>
 
-- [budget live Link](https://budget-ower.onrender.com)
+- [budget live Link](https://www.loom.com/share/68751e16797c4bdcb624584ebb252b03?sid=211ee6e4-1690-4733-a88b-6449e74c80ab)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
