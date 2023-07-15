@@ -7,13 +7,15 @@
       <h1 class="font-bold">Add a new category</h1>
     </div>
   </div>
-  <div class="mt-4 w-full px-3 flex flex-col justify-center">
+  <div class="mt-4 w-full flex flex-col justify-center">
     <%= form_with(model: @category, url: categories_path) do |form| %>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2 px-3">
         <%= form.text_field :name, autofocus: true, placeholder: "name", class: "px-2 py-2 w-full" %>
   
         <%= form.text_field :icon, autofocus: true, placeholder: "icon", class: "px-2 py-2" %>
-        <div class="bg-main h-fit rounded-sm text-center py-3 px-4 text-white mt-4">
+      </div>
+      <div class="target bg-mygreen flex items-end h-20 rounded-sm text-center w-full py-4 px-4 text-white", style="position: fixed; bottom: 0;">
+        <div class="border border-2 border-white h-full w-full flex items-center justify-center">
           <%= form.submit "Save", class: "w-full" %>
         </div>
       </div>
