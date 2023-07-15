@@ -11,10 +11,10 @@
     <%= form_with(model: @category, url: categories_path) do |form| %>
       <div class="flex flex-col gap-2 bg-white">
         <div class="flex items-center">
-          <div class="w-20 p-2">
+          <div class="h-20 w-20 p-2">
             <%= image_tag(@category.icon, class: "h-full") %>
           </div>
-          <h1><%= @category.name %> Transactions</h1>
+          <h1 class="ms-4 font-bold"><%= @category.name %> Transactions</h1>
         </div>
         <table>
           <thead>
