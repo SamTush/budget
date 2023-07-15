@@ -16,6 +16,10 @@
             <%= f.label :amount %>
             <%= f.number_field :amount, class: "p-2" %>
           </div>
+          <div class="mt-3">
+            <%= @category.name %>
+            <%= f.label :category %>
+          </div>
         
           <div class="bg-main h-fit rounded-sm text-center py-3 px-4 text-white mt-4">
             <%= f.submit "Save", class: "w-full" %>
