@@ -15,10 +15,9 @@
             
             <%= f.label :amount %>
             <%= f.number_field :amount, class: "p-2" %>
-          </div>
-          <div class="mt-3">
-            <%= @category.name %>
-            <%= f.label :category %>
+
+            <%= f.label :categories %>
+            <%= f.text_field :category_ids, autofocus: true, class: "w-full px-2 py-2" %>
           </div>
         
           <div class="bg-main h-fit rounded-sm text-center py-3 px-4 text-white mt-4">
