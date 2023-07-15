@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/2a42914cf9.js" crossorigin="anonymous"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              main: '#3778c2',
+              mygreen: '#5fb523',
+              myblack: '#434b54',
+            }
+          }
+        }
+      }
+    </script>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? && current_page?(authenticate_root_path) %>
+      <%= button_to "log out", destroy_user_session_path, method: :delete, class: "w-full text-white pe-2 font-bold flex justify-end bg-main" %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

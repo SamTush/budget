@@ -1,0 +1,14 @@
+<section class="h-screen bg-gray-200">
+  <div class="h-16 bg-main text-white flex justify-center items-end pb-2">
+    <h1 class="font-bold">LOG IN</h1>
+  </div>
+  <div class="px-4 mt-4">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="flex flex-col gap-2">
+        <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "px-2 py-2" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "px-2 py-2" %>
+        <%= f.submit "Log in", class: "border border-1 border-gray-300 py-2" %>
+      </div>
+    <% end %>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section class="min-h-screen bg-gray-200 flex flex-col items-center w-full">
+  <div class="bg-main w-full text-white pt-2">
+    <%= link_to category_transactions_path(@category), class: "text-white ps-3" do %>
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    <% end %>
+    <div class="h-10 bg-main w-full text-white flex justify-center items-end pb-2">
+      <h1 class="font-bold">Add a New Transaction</h1>
+    </div>
+  </div>
+  <div class="mt-4 px-3 w-full gap-2">
+        <%= form_with(model: [@category, @transaction], url: category_transactions_path(@category)) do |f| %>
+          <div class="flex flex-col">
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, class: "w-full px-2 py-2" %>
+            
+            <%= f.label :amount %>
+            <%= f.number_field :amount, class: "p-2" %>
+
+            <%= f.label :categories %>
+            <%= f.text_field :category_ids, autofocus: true, class: "w-full px-2 py-2" %>
+          </div>
+        
+          <div class="bg-main h-fit rounded-sm text-center py-3 px-4 text-white mt-4">
+            <%= f.submit "Save", class: "w-full" %>
+          </div>
+        <% end %>
+  </div>
+</section>
+
+

@@ -1,0 +1,2 @@
+class LuncherController < ApplicationController
+end
