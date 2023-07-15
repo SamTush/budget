@@ -120,13 +120,10 @@ To run tests, run the following command:
 ```
   rspec
 ```
---->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Sam**
 
@@ -135,8 +132,6 @@ To run tests, run the following command:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Change design]**
 
