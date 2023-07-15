@@ -14,7 +14,7 @@ RSpec.describe CategoriesController, type: :controller do
     it 'assigns categories belonging to the current user' do
       user = create(:user)
       sign_in user
-      category = create(:category, user: user)
+      category = create(:category, user:)
 
       get :index
 
@@ -26,7 +26,7 @@ RSpec.describe CategoriesController, type: :controller do
     it 'returns a successful response' do
       user = create(:user)
       sign_in user
-      category = create(:category, user: user)
+      category = create(:category, user:)
 
       get :show, params: { id: category.id }
 
@@ -36,7 +36,7 @@ RSpec.describe CategoriesController, type: :controller do
     it 'assigns the category belonging to the current user' do
       user = create(:user)
       sign_in user
-      category = create(:category, user: user)
+      category = create(:category, user:)
 
       get :show, params: { id: category.id }
 
@@ -46,8 +46,8 @@ RSpec.describe CategoriesController, type: :controller do
     it 'assigns the transactions belonging to the category' do
       user = create(:user)
       sign_in user
-      category = create(:category, user: user)
-      transaction = create(:transaction, category: category)
+      category = create(:category, user:)
+      transaction = create(:transaction, category:)
 
       get :show, params: { id: category.id }
 
@@ -59,9 +59,9 @@ RSpec.describe CategoriesController, type: :controller do
       sign_in user
       category = create(:category)
 
-      expect {
+      expect do
         get :show, params: { id: category.id }
-      }.to raise_error(ActiveRecord::RecordNotFound)
+      end.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 
@@ -93,9 +93,9 @@ RSpec.describe CategoriesController, type: :controller do
 
         category_params = attributes_for(:category)
 
-        expect {
+        expect do
           post :create, params: { category: category_params }
-        }.to change(Category, :count).by(1)
+        end.to change(Category, :count).by(1)
       end
 
       it 'redirects to the categories index' do
@@ -117,9 +117,9 @@ RSpec.describe CategoriesController, type: :controller do
 
         category_params = attributes_for(:category, name: '')
 
-        expect {
+        expect do
           post :create, params: { category: category_params }
-        }.not_to change(Category, :count)
+        end.not_to change(Category, :count)
       end
 
       it 'renders the new template' do
