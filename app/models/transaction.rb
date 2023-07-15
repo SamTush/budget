@@ -7,4 +7,3 @@ class Transaction < ApplicationRecord
 
   accepts_nested_attributes_for :categories
 end
-  
