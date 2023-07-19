@@ -3,7 +3,7 @@
     <div class="h-12 bg-main w-full text-white flex justify-center items-end pb-2">
       <h1 class="font-bold">CATEGORIES</h1>
     </div>
-    <div class="px-4 mt-2 h-64 w-full overflow-scroll">
+    <div class="px-4 mt-2 h-full w-full overflow-scroll">
       <% @categories.each do |category| %>
         <a href="<%= category_transactions_path(category) %>" class="block">
           <div class="flex mt-5 bg-white gap-4 rounded-sm">
